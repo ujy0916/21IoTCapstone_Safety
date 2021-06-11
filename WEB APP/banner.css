@@ -1,0 +1,25 @@
+/*배너 CSS*/
+.sideBanner {
+  position: absolute;
+  width: 150px;
+  left: 90%;
+  top: 100px;
+  background-color: rgba(205, 92, 92, 0.3);
+  color: #fffffff;
+  text-align: center;
+}
+
+#Banner {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#hrColor {
+	background-color : rgba(219, 112, 147, 0.5);
+	height: 2px;
+}
+
+#BannerDanger {
+	color:red;
+	font-weight: bold;
+}

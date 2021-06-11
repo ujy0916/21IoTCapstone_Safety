@@ -1,0 +1,30 @@
+/*구역 목록 페이지 CSS*/
+#divArea {
+	border: 1px dashed black; 
+	width: 75%; 
+	height: 200px; 
+	display: inline-block;
+	margin-bottom: 50px;
+	border-radius: 10px / 10px;
+}
+
+#h2color {
+	color : darkblue;
+	font-weight: bold;
+	display: inline;
+}
+
+#total, #A1total, #A2total, #A3total {
+	color : red;
+	font-weight: bold;
+	font-size : 20px;
+	display: inline;
+}
+
+#plus {
+	display: inline;
+	/*font-weight: bold;*/
+	font-size: 20px;
+	background: transparent;
+	border : 0;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Smart Iot Monitoring system</title>
+
+      <!-- JQuery 라이브러리 설정 -->
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+      <!-- 디바이스 조회 자바스크립트 로딩-->
+      <script src="login.js"></script>
+
+      <!-- 디자인 적용 -->
+      <link rel="stylesheet" href="login.css" type="text/css">
+   </head>
+   <body>
+   	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Iot Monitoring system</title>
+
+
+    <!-- JQuery 라이브러리 설정 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
+
+    <!-- 차트 디자인 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- 디자인 적용 -->
+    <link rel="stylesheet" href="ManagerMain.css" type="text/css">
+    <link rel="stylesheet" href="banner.css" type="text/css">
+</head>
+    
+<body>
+<!-- 메뉴바 Start -->
+<nav class="navbar navbar-default" id="menubar"> 
+  <div class="container-fluid"> 
+    <!-- 메뉴에서 가장 왼쪽, 모바일에서 표시되는 제목 -->  
+    <div class="navbar-header"> 
+      <!-- 모바일때 표시되는 메뉴 버튼(PC 버젼에서는 보이지 않는다.)  -->  
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">   
+        <span class="sr-only">Toggle navigation</span>  
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>  
+      </button> 
+
+      <!-- 메뉴의 홈페이지 이름 -->
+      <a class="navbar-brand" href="ManagerMain.html">
+        <div style="color:rgba(255,255,255,1); font-weight: bold; font-size: 30px;">
+          <img src="images/helmet.png" alt="helmet" style="width:33px; vertical-align: top;"> S.I.M
+        </div>                
+      </a>    
+    </div>  
+    
+    <!-- 메뉴의 리스트 -->    
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-center"> 
+        <li id="menubartext"><a href="ManagerMain.html">모니터링<span class="sr-only">(current)</span></a></li>
+
+        <!-- DropDown 형식의 메뉴 -->    
+        <li class="dropdown" id="menubartext">   
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">구역정보<span class="caret"></span></a>  
+          <ul class="dropdown-menu">    
+            <li id="submenuColor"><a href="AreaWorkerPreview.html">구역별 작업자</a></li>    
+          </ul> 
+        </li>              
+         
+        <li id="menubartext"><a href="RegistWorker.html">작업자등록</a></li>
+
+        <li class="dropdown" id="menubartext">   
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">기타정보<span class="caret"></span></a>  
+          <ul class="dropdown-menu">    
+            <li id="submenuColor"><a href="AttendView.html">출근부</a></li>
+            <li id="submenuColor"><a href="WarningView.html">알림내역</a></li>  
+            <li id="submenuColor"><a href="Streaming.html">스트리밍</a></li>
+          </ul> 
+        </li>
+      </ul>         
+
+      <!-- 오른쪽 정렬의 메뉴 -->   
+      <ul class="nav navbar-nav navbar-right">  
+        <!-- Link 메뉴 -->  
+        <div style="text-align: center; padding-top: 5px">  
+        <li style="font-size: 14.5px"><b>관리자</b></li>      
+        <li></li>
+        <li style="font-size: 13px; color: gray" id="mangerName">Name</li>  
+      </div>
+      </ul>
+
+    </div>  
+  </div>    
+</nav>
+<!-- 메뉴바 End-->
+
+<!-- 스트리밍 페이지 -->
+<div style="text-align: center">
+  <h3>스트리밍</h3>
+<img id="stream" src="IP 주소" style="width:600px; height:600px;"> </img>
+<div>
+
+  <div class="sideBanner">
+  <br>
+  <div id="Banner"> 위험 알림 </div>
+  <hr id="hrColor">
+  <div id="BannerDanger">조회중... </div>
+  <br>
+</div>
+
+
+<!-- 자바스크립트 로딩-->
+<script src="Streaming.js"> </script>
+<script src="banner.js"> </script>
+
+</body>
+</html>

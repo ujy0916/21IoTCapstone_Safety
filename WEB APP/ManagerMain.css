@@ -1,0 +1,18 @@
+/*ManagerMain CSS*/
+#menubar {
+	background: rgba(0, 114, 167, 0.3);
+}
+
+#submenuColor {
+	background: rgb(255, 255, 255);
+}
+
+#menubarposition {
+	position: center;
+}
+
+#menubartext {
+	color: black;
+	font-size: 17px;
+}
+

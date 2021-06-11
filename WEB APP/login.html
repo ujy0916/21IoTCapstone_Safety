@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Iot Monitoring system</title>
+
+    <!-- JQuery 라이브러리 설정 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <!-- 디바이스 조회 자바스크립트 로딩-->
+    <script src="login.js"></script>
+
+    <!-- 디자인 적용 -->
+    <link rel="stylesheet" href="login.css" type="text/css">
+</head>
+    
+<body>
+    <div id="loading"><img id="loading-image" src="LoadingImg.gif" alt="Loading..." /></div>
+
+    <div class="container">
+
+    <div style="margin-top:100px; text-align: center" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h3 style="font-size:50px">Smart IoT</h3>
+        <h3 style="font-size:50px">Monitoring System</h3>
+        <br>
+        <img src="images/helmet.png" alt="helmet" style="width: 200px"> 
+    
+
+    <div style="margin-top: 40px; text-align: center;">
+
+    <div style="margin-bottom: 15px; margin-left: 150px" class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text" class="form-control" name="id" name="id" style="width: 200px"/>
+    </div>
+
+    <div style="margin-bottom: 25px; margin-left: 150px" class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    <input class="form-control" type="password" name="pass" name="pass" style="width: 200px"/>
+    </div>
+
+    <p> </p>
+
+    <input type="submit" class="btn btn-info" value="로그인" onclick="Start();" /> 
+
+    </div>
+
+    
+    </div>
+
+    </div>
+</body>
+</html>
