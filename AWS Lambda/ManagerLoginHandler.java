@@ -31,7 +31,7 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 public class ManagerLoginHandler implements RequestHandler<Event, String> {
 	
-	private DynamoDB dynamoDb;
+    private DynamoDB dynamoDb;
     private String DYNAMODB_TABLE_NAME = "ManagerDB";
 
     @Override
