@@ -44,9 +44,6 @@ int Mq_7 = A3;   // MQ-7 가스센서 입력을 위한 아날로그 핀
 
 int speaker = 2;  //스피커 
 
-//심박 SDA(A4)/SCL(A5)
-#include <Wire.h>
-
 //beacon
 #include <ArduinoBLE.h>
 
