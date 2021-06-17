@@ -86,6 +86,8 @@ static const char * ROOT_CA_PATH = CONFIG_EXAMPLE_ROOT_CA_PATH;
 #error "Invalid method for loading certs"
 #endif
 
+#define STREAM_URL "{StaticIP}"
+
 char* HelmetID = ""; //헬멧 ID
 char* S3_URL = "{BUCKET_NAME}.s3.{REGION}.amazonaws.com"; //S3 Host 주소
 
@@ -349,11 +351,11 @@ void subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, uint16
         
         char* det = strchr(rekog, 'S');
         if( det != NULL) {
-            ESP_LOGE(TAG, "[EXIT_S]프로그램을 종료합니다");
-            esp_deep_sleep_start();
+            
+            
         }
             while( det == NULL ){
-                if(i==5){
+                if(i==4){ //4번 다 실패하면 프로그램 종료 (reset 눌러야 시작됨)
                     ESP_LOGE(TAG, "[EXIT_F]프로그램을 종료합니다");
                     esp_deep_sleep_start();
                 } 

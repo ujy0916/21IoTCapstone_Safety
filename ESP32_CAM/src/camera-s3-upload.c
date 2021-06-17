@@ -39,7 +39,8 @@ esp_err_t upload_image_to_s3(char *S3_URL, char *filename)
      Content-Length: {fb->len, 사진데이터 길이}
     */    
     
-    sprintf(s3Request,"PUT /Helmet/%s.jpg HTTP/1.1\r\nHost: %s\r\nx-amz-acl: bucket-owner-full-control\r\nContent-Type: text/plain\r\nContent-Length: %d\r\n\r\n", filename, S3_URL, fb->len);
+    sprintf(s3Request,"PUT /Helmet/%s.jpg HTTP/1.1\r\nHost: %s\r\nx-amz-acl: bucket-owner-full-control\r\nContent-Type: text/plain\r\nContent-Length: %d\r\n\r\n",
+     filename, S3_URL, fb->len);
     //ESP_LOGE(TAG, "[S3]Request: %s", s3Request);
     
 

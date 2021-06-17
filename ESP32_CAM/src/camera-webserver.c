@@ -22,7 +22,8 @@ esp_err_t jpg_stream_httpd_handler(httpd_req_t *req){
     if(!last_frame) {
         last_frame = esp_timer_get_time();
     }
-
+    
+    //HTTP 콘텐츠 유형을 설정하는 API(image/jpeg 형태로 설정)
     res = httpd_resp_set_type(req, _STREAM_CONTENT_TYPE);
     if(res != ESP_OK){
         return res;
@@ -47,6 +48,7 @@ esp_err_t jpg_stream_httpd_handler(httpd_req_t *req){
             _jpg_buf = fb->buf;
         }
 
+        //요청에 대한 HTTP 응답으로 데이터를 보냄 (응답중인 요청, 콘텐츠 가져올 버퍼, 버퍼 길이)
         if(res == ESP_OK){
             res = httpd_resp_send_chunk(req, _STREAM_BOUNDARY, strlen(_STREAM_BOUNDARY));
         }
@@ -69,11 +71,9 @@ esp_err_t jpg_stream_httpd_handler(httpd_req_t *req){
         int64_t frame_time = fr_end - last_frame;
         last_frame = fr_end;
         frame_time /= 500;
-        // frame_time /= 1000;
         ESP_LOGI(TAG, "MJPG: %uKB %ums (%.1ffps)",
             (uint32_t)(_jpg_buf_len/1024),
             (uint32_t)frame_time, 500.0 / (uint32_t)frame_time);
-            // (uint32_t)frame_time, 1000.0 / (uint32_t)frame_time);
     }
 
     last_frame = 0;

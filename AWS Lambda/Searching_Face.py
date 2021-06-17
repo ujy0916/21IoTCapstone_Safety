@@ -20,7 +20,7 @@ def Split_photo(text):
     
 def lambda_handler(event, context):
     mqtt = boto3.client('iot-data', region_name=region) #IoTCore와 연결
-    helmet_id = (str(event['id'])).split('C')[0]
+    helmet_id = str(event['id'])
     file_name = helmet_id + '.jpg'
     photo = 'Helmet/'+file_name
 
